@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saffron & Spice | An Indian Culinary Journey</title>
+    <style>
+        /* --- CSS STYLING --- */
+        :root {
+            --primary-color: #D65A31; /* Deep Saffron/Orange */
+            --secondary-color: #393E46; /* Charcoal */
+            --accent-color: #FFD369; /* Warm Gold */
+            --bg-color: #F7F7F7; /* Light Gray */
+            --text-color: #222831; /* Dark Gray */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            width: 85%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            color: var(--accent-color);
+            font-size: 24px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://unsplash.com') no-repeat center center/cover;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+        }
+
+        /* Main Layout */
+        .main-container {
+            width: 85%;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        /* Blog Posts Area */
+        .blog-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .post {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .post-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .post-content {
+            padding: 25px;
+        }
+
+        .post-meta {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .post-title {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .post-excerpt {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .read-more-btn:hover {
+            background-color: #b54622;
+        }
+
+        /* Sidebar Area */
+        sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .widget {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .widget h3 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .about-me-img {
+            width: 100%;
+            border-radius: 50%;
+            max-width: 150px;
+            display: block;
+            margin: 0 auto 15px;
+        }
+
+        .categories-list {
+            list-style: none;
+        }
+
+        .categories-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .categories-list li a {
+            text-decoration: none;
+            color: var(--text-color);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .categories-list li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Saffron<span>&Spice</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Recipes</a></li>
+                    <li><a href="#">Regional Guides</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>The Art of Indian Spices</h2>
+        <p>A culinary journey exploring the rich traditions, vibrant colors, and unforgettable flavors of regional Indian cuisine.</p>
+    </section>
+
+    <!-- Main Content Container -->
+    <div class="main-container">
+        
+        <!-- Blog Posts -->
+        <main class="blog-posts">
+            
+            <!-- Post 1 -->
+            <article class="post">
+                <img src="https://unsplash.com" alt="North Indian Curry" class="post-img">
+                <div class="post-content">
+                    <div class="post-meta">Published on October 2, 2026 | By Priya Sharma</div>
+                    <h2 class="post-title">Demystifying the Perfect Butter Chicken (Murgh Makhani)</h2>
+                    <p class="post-excerpt">Butter chicken is globally loved, but making it authentic at home requires balancing the smoke of the tandoori marinade with a velvety, tangy tomato-cashew gravy. In this guide, we dive deep into the spices that make this dish a North Indian masterpiece.</p>
+                    <a href="#" class="read-more-btn">Read More</a>
+                </div>
+            </article>
+
+            <!-- Post 2 -->
+            <article class="post">
+                <img src="https://unsplash.com" alt="South Indian Dosa" class="post-img">
+                <div class="post-content">
+                    <div class="post-meta">Published on September 28, 2026 | By Priya Sharma</div>
+                    <h2 class="post-title">The Science Behind the Perfect Fermented Dosa Batter</h2>
+                    <p class="post-excerpt">Crispy, golden, and slightly tangy—a perfect South Indian Masala Dosa is a work of art. The secret lies entirely in the fermentation process of the rice and urad dal. Learn how weather, time, and ratios impact your daily breakfast staple.</p>
+                    <a href="#" class="read-more-btn">Read More</a>
+                </div>
+            </article>
+
+        </main>
+
+        <!-- Sidebar -->
+        <sidebar>
+            
+            <!-- About Widget -->
+            <div class="widget">
+                <h3>About The Chef</h3>
+                <img src="https://unsplash.com" alt="Chef Priya" class="about-me-img">
+                <p style="text-align: center; font-size: 15px;">Namaste! I'm Priya, a food blogger and culinary historian dedicated to bringing authentic, time-tested Indian recipes to modern kitchens.</p>
+            </div>
+
+            <!-- Categories Widget -->
+            <div class="widget">
+                <h3>Categories</h3>
+                <ul class="categories-list">
+                    <li><a href="#">North Indian <span>(12)</span></a></li>
+                    <li><a href="#">South Indian <span>(9)</span></a></li>
+                    <li><a href="#">Street Food Chronicles <span>(15)</span></a></li>
+                    <li><a href="#">Spices & Techniques <span>(6)</span></a></li>
+                    <li><a href="#">Desserts & Sweets <span>(8)</span></a></li>
+                </ul>
+            </div>
+
+        </sidebar>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Saffron & Spice Blog. Built with ❤️ for Indian Cuisine.</p>
+    </footer>
+
+</body>
+</html>
