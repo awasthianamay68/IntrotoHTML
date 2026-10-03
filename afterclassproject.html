@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SportZone Activity 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4ff;
+            padding: 20px;
+            margin: 0; /* Clears browser default margin */
+            min-height: 1800px;
+        }
+        h1 {
+            margin-top: 80px; /* Increased margin to push it below the fixed top bar */
+            margin-bottom: 20px;
+            color: #1e3a8a; /* Changed from lightblue to dark blue for readability */
+            text-align: center;
+        }
+        h2 {
+            color: darkblue;
+            margin-top: 40px; /* Added spacing above sections */
+            margin-bottom: 15px; /* Added spacing below headers */
+        }
+        p {
+            color: darkblue;
+            margin-top: 0;
+            margin-bottom: 20px; /* Balanced spacing under descriptions */
+            line-height: 1.5;
+        }
+        /* Changed from .scorebar to .score-bar to match your HTML class */
+        .score-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: darkblue;
+            color: white;
+            padding: 15px 20px; /* Clean padding inside the banner */
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            z-index: 1000; /* Keeps it on top of other elements */
+        }
+        .player-wrapper {
+            position: relative;
+            display: inline-block; /* Fixed: display cannot be '15px' */
+            margin-top: 15px;
+            margin-bottom: 30px; /* Creates separation from text below */
+        }
+        .player-card {
+            background: #eee;
+            border: 2px solid #ddd;
+            padding: 25px 40px; /* Enhanced padding for a cleaner card look */
+            text-align: center;
+            font-size: 15px;
+            border-radius: 10px; /* Fixed typo: bordor-radius */
+        }
+        .winner-badge {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            background: #f59e0b;
+            color: white;
+            padding: 6px 12px; /* Generous padding for the badge */
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+        .league-label {
+            position: sticky;
+            top: 50px; /* Fixed: Added missing semicolon */
+            background: darkblue; /* Fixed: Added missing semicolon */
+            color: #eee; /* Fixed: Added missing semicolon */
+            padding: 12px 20px; /* Clear padding for the sticky tracker */
+            margin-bottom: 15px; /* Margin below sticky header */
+            font-weight: bold;
+        }
+        /* Fixed: Added missing dot (.) to make it a class selector */
+        .player-item {
+            background: white;
+            border: 2px solid #bfdbfe;
+            padding: 12px 20px; /* Comfortable padding inside list items */
+            margin: 10px 0; /* Creates 10px gap between stacked list items */
+            width: 220px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="score-bar">🏆 SportZone &nbsp;|&nbsp; Live Score: Team A 3 — 2 Team B &nbsp;|&nbsp; FIXED</div>
+    
+    <h1>🏆 SportZone Tournament</h1>
+    
+    <h2>Absolute Positioning</h2>
+    <p>The gold badge is pinned to the player card using <strong>position: absolute</strong>. The card has <strong>position: relative</strong>.</p>
+    
+    <div class="player-wrapper">
+        <div class="player-card">⚽ Alex Johnson<br>Striker — 12 Goals</div>
+        <div class="winner-badge">🏆 MVP</div>
+    </div>
+    
+    <h2>Fixed Positioning</h2>
+    <p>The blue scoreboard at the top uses <strong>position: fixed</strong>. Scroll down — it always stays visible!</p>
+    
+    <h2>Sticky Positioning</h2>
+    <p>The league label scrolls with the page, then sticks to the top as you scroll past it.</p>
+    
+    <div class="league-label">🏆 Premier League Players — STICKY</div>
+    <div class="player-item">⚽ Alex Johnson — 12 Goals</div>
+    <div class="player-item">⚽ Sam Rivera — 10 Goals</div>
+    <div class="player-item">⚽ Jordan Lee — 9 Goals</div>
+    <div class="player-item">⚽ Casey Kim — 8 Goals</div>
+    <div class="player-item">⚽ Morgan Chen — 7 Goals</div>
+    <div class="player-item">⚽ Riley Park — 6 Goals</div>
+    
+    <h2>top, right, bottom, left</h2>
+    <p>These control exactly where a positioned element is placed. Try changing the values on <strong>.winner-badge</strong> above!</p>
+    <p>top — down from top &nbsp;|&nbsp; right — left from right &nbsp;|&nbsp; bottom — up from bottom &nbsp;|&nbsp; left — right from left</p>
+</body>
+</html>
